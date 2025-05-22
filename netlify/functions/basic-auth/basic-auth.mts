@@ -4,6 +4,7 @@ const AUTH_TOKEN = 'QRAVQgdvBEVX3kVtV5FGT1copZjiCBzgPcfiA4Q5+Ts='
 
 export default (request: Request, context: Context) => {
   try {
+    console.log('Received request', request)
     const authorization = request.headers.get('Authorization')
     if (!authorization || !authorization.startsWith('Bearer ')) {
       return new Response('Unauthorized', { status: 401 })
